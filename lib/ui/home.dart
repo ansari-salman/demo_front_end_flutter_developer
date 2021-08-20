@@ -1,7 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import '/ui/recipe.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -31,7 +29,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body:  Center(
+      body: (_selectedItem == 0) ? Recipe() : Center(
         child: Text(_title[_selectedItem]),
       ),
       bottomNavigationBar: BottomNavigationBar(
