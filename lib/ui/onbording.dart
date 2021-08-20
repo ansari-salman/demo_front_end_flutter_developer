@@ -82,7 +82,7 @@ class _OnBordingState extends State<OnBording> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
                   model.length,
-                  (index) => buildDot(index, context),
+                  (index) => buildDot(index),
                 ),
               ),
             ),
@@ -90,17 +90,17 @@ class _OnBordingState extends State<OnBording> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                    onPressed: () => {
-                      gotoHome()
-                    },
+                    onPressed: () => {gotoHome()},
                     child: Text("Skip",
                         style: TextStyle(
                           color: Colors.white,
                         ))),
                 IconButton(
                     onPressed: () => {
-                      currentIndex == model.length - 1 ? gotoHome() : gotoNext()
-                    },
+                          currentIndex == model.length - 1
+                              ? gotoHome()
+                              : gotoNext()
+                        },
                     icon: Icon(
                       Icons.arrow_forward_rounded,
                       color: Colors.white,
@@ -127,14 +127,14 @@ class _OnBordingState extends State<OnBording> {
     );
   }
 
-  Container buildDot(int index, BuildContext context) {
+  Container buildDot(int index) {
     return Container(
       height: 8,
       width: currentIndex == index ? 14 : 8,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: Colors.white70,
       ),
     );
   }
